@@ -1,0 +1,141 @@
+{% load embed_video_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <title>Deconve - Monitoring User</title>
+  </head>
+  <body>
+    <nav>
+      <img
+        class="logo"
+        src="https://uploaddeimagens.com.br/images/003/753/147/original/Deconve_2019-removebg-preview.png?1646337047"
+      />
+      <a href="/admin" class="btn btn-primary">
+        Ambiente de administração
+        <span class="material-icons" style="font-size: 1.7rem"
+          >arrow_forward</span
+        >
+      </a>
+      <ul>
+        <li class="nav-item selected">
+          <span class="material-icons"> video_library </span>
+          Videos
+        </li>
+      </ul>
+    </nav>
+    <div class="container">
+      <div class="videos-container">
+        {% for i in obj %} {% video i.video 'small' %} {% endfor %}
+      </div>
+    </div>
+  </body>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;1,300&display=swap");
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+      font-size: 62.5%;
+    }
+    body {
+      display: flex;
+    }
+    .container {
+      width: calc(100% - 26rem);
+      padding: 4.5rem 2.5rem;
+      background-image: url('https://uploaddeimagens.com.br/images/003/753/299/original/Frame_1240.png?1646340081');
+      background-position: 40% -10%;
+    }
+    .videos-container {
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 3rem;
+      gap: 3%;
+    }
+    .videos-container iframe{
+        margin-bottom: 3rem;
+        border-radius: 16px;
+    }
+    header {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+    }
+    nav {
+      height: 100vh;
+      padding: 3rem 1.5rem;
+      width: 26rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #fff;
+      z-index: 1;
+      box-shadow: 0px 0px 30px -17px rgb(187, 187, 187);
+    }
+    ul {
+      margin-top: 3rem;
+      gap: 1rem;
+      width: 100%;
+    }
+    ul .nav-item {
+      list-style: none;
+      width: 100%;
+      padding: 2rem;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      color: #97a59f;
+      font-size: 1.5rem;
+      font-family: Poppins;
+      border-radius: 16px;
+      cursor: pointer;
+    }
+    ul .selected {
+      transform: scale(1.02);
+      color: #1d443a;
+      background-color: #449d8711;
+    }
+    ul .selected span {
+      color: #449d87;
+    }
+    .btn {
+      cursor: pointer;
+      outline: none;
+      border: none;
+      appearance: none;
+      text-decoration: none;
+    }
+    .btn-primary {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      width: 100%;
+      padding: 1.2rem;
+      color: #fff;
+      gap: 0.5rem;
+      font-size: 1.3rem;
+      font-weight: 400;
+      font-family: Poppins;
+      background-color: #449d87;
+      transition: 0.15s;
+    }
+    .btn-primary:hover {
+      box-shadow: 0px 0px 14px -7px #4b8677;
+      transform: scale(1.01) translateY(-2px);
+    }
+    .logo {
+      width: 14rem;
+      height: 3rem;
+      margin-bottom: 4rem;
+      object-fit: cover;
+    }
+  </style>
+</html>

@@ -1,0 +1,11 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-size: 62.5%;
+}
+.logo{
+    width: 20rem;
+    height: 5rem;
+    object-fit: cover;
+}
